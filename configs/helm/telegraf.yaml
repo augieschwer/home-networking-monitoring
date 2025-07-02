@@ -20,6 +20,8 @@ args: []
 env:
   - name: HOSTNAME
     value: "telegraf-polling-service"
+  - name: INFLUX_TOKEN
+    value: "8jFBqh3PxHH1cNx7I9olZt9HxjtGBLHc5YGXcbTnY4O3Z0ChG94b82gXTBXlG0xHT8FupX-BMwWyYhTXdbcSHA=="
 # An older "volumeMounts" key was previously added which will likely
 # NOT WORK as you expect. Please use this newer configuration.
 
@@ -147,9 +149,35 @@ config:
   outputs:
     - influxdb:
         urls:
-          - "http://influxdb.monitoring.svc:8086"
-        database: "telegraf"
+          - "http://myinfluxdb-influxdb2.default.svc.cluster.local"
+        database: "default"
   inputs:
+    - http:
+        urls:
+          - "http://192.168.86.21/json?live=true"
+          - "http://192.168.86.250/json?live=true"
+        data_format: "json"
+        name_override: "purpleair"
+        tag_keys:
+          - "SensorId"
+          - "Geo"
+          - "Mem"
+          - "place"
+          - "version"
+          - "hardwareversion"
+          - "hardwarediscovered"
+          - "wlstate"
+          - "status_0"
+          - "status_1"
+          - "status_2"
+          - "status_3"
+          - "status_4"
+          - "status_5"
+          - "status_6"
+          - "status_7"
+          - "status_8"
+          - "status_9"
+          - "ssid"
     - statsd:
         service_address: ":8125"
         percentiles:
