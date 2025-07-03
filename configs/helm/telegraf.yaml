@@ -147,10 +147,12 @@ config:
             problem: 2
             critical: 3
   outputs:
-    - influxdb:
+    - influxdb_v2:
         urls:
           - "http://myinfluxdb-influxdb2.default.svc.cluster.local"
-        database: "default"
+        token: "$INFLUX_TOKEN"
+        organization: "influxdata"
+        bucket: "default"
   inputs:
     - http:
         urls:
