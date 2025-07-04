@@ -2,3 +2,16 @@ persistence:
   enabled: true
 initChownData:
   enabled: false
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: "InfluxDB_v2_InfluxQL"
+        type: "influxdb"
+        access: "proxy"
+        url: "http://myinfluxdb-influxdb2.default.svc.cluster.local/"
+        jsonData:
+          dbName: "default"
+          httpHeaderName1: 'Authorization'
+        secureJsonData:
+          httpHeaderValue1: 'Token xcT8ZdMGkKvznU3MpWMdJo1h5XJ4EusO'
