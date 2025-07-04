@@ -1,2 +1,4 @@
 persistence:
   enabled: true
+initChownData:
+  enabled: false
