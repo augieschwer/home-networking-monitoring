@@ -163,6 +163,20 @@ config:
         tag_keys:
           - "SensorId"
           - "place"
+    - http:
+        urls:
+          - "http://192.168.86.1/api/v1/status"
+          - "http://192.168.86.31/api/v1/status"
+          - "http://192.168.86.32/api/v1/status"
+        data_format: "json"
+        name_override: "googlewifi"
+        tag_keys:
+          - "wan_localIpAddress"
+        json_string_fields:
+          - "system_lan0Link"
+          - "wan_ethernetLink"
+          - "wan_ipAddress"
+          - "wan_online"
     - statsd:
         service_address: ":8125"
         percentiles:
