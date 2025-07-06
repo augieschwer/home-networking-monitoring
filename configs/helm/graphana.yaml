@@ -2,6 +2,8 @@ persistence:
   enabled: true
 initChownData:
   enabled: false
+service:
+  type: "NodePort"
 datasources:
   datasources.yaml:
     apiVersion: 1
