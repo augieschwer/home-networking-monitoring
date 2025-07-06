@@ -1,5 +1,6 @@
 # home-networking-monitoring
-Documentation and configuration for monitoring my home network and devices on the network; including PurpleAir sensors.
+Documentation and configuration for monitoring my home network and devices on the network; including PurpleAir sensors, and Google Wifi devices.
+
 ## Setup
 
 ### Minikube
