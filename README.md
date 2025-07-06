@@ -34,3 +34,10 @@ helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 helm upgrade --install mygraphana -f configs/helm/graphana.yaml grafana/grafana
 ```
+
+#### Set up Ingress on Minikube
+
+```
+minikube addons enable ingress
+minikube service mygraphana-grafana --url
+```
