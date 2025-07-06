@@ -41,3 +41,16 @@ helm upgrade --install mygraphana -f configs/helm/graphana.yaml grafana/grafana
 minikube addons enable ingress
 minikube service mygraphana-grafana --url
 ```
+
+#### Dashboards
+
+[Preconfigured dashboards](configs/graphana)
+
+![pa_dash-1](https://github.com/user-attachments/assets/32b86b3c-ab78-4a0f-a007-7f82f1e5da0f)
+![pa_dash-2](https://github.com/user-attachments/assets/a3ca79a2-743e-44ea-8bc6-052a61b0eb72)
+![pa_dash-3](https://github.com/user-attachments/assets/f6f60941-584f-4c6f-b3a2-9dae007a726a)
+
+##### Nerdy details
+
+[PurpleAir Sensor JSON Documentation](https://community.purpleair.com/t/sensor-json-documentation/6917)
+
