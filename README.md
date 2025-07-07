@@ -58,6 +58,72 @@ minikube service mygraphana-grafana --url
 ![Screenshot from 2025-07-06 14-48-36](https://github.com/user-attachments/assets/e5f34aac-64b8-42a1-afe8-8f6126c7a3b3)
 
 
+## Cable Modem Status Parser
+
+The `parse_modem_status.py` script parses HTML status pages from cable modems and outputs key metrics in InfluxDB line protocol format.
+
+### Features
+
+- Fetches modem status from HTTP endpoint
+- Parses HTML tables to extract key metrics
+- Converts uptime strings to seconds
+- Outputs data in InfluxDB line protocol format
+- Handles network errors gracefully
+
+### Usage
+
+```bash
+python3 parse_modem_status.py
+```
+
+### Output Format
+
+The script outputs InfluxDB line protocol with the following structure:
+
+**Measurement**: `cable_modem_status`
+
+**Tags** (static identifiers):
+- `mac_address`: Cable modem MAC address
+- `serial_number`: Device serial number  
+- `hardware_version`: Hardware version
+
+**Fields** (metrics):
+- `software_version`: Current software/firmware version
+- `docsis_version`: DOCSIS specification compliance
+- `uptime_seconds`: Uptime in seconds (numeric)
+- `uptime_raw`: Raw uptime string from modem
+- `status`: Always 1 (indicates modem is online)
+
+### Example Output
+
+```
+cable_modem_status,mac_address=C8:63:FC:A2:1F:C5,serial_number=A4M5J1685600275,hardware_version=6 software_version="D31CM-PEREGRINE-1.1.1.0-GA-11-NOSH",docsis_version="Docsis 3.1",uptime_seconds=2484908,uptime_raw="28 days 18h:15m:08s.00",status=1 1751918337127612928
+```
+
+### Dependencies
+
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Integration with InfluxDB
+
+To send data directly to InfluxDB:
+
+```bash
+# Send to InfluxDB via HTTP API
+python3 parse_modem_status.py | curl -i -XPOST 'http://localhost:8086/write?db=networking' --data-binary @-
+
+# Or use with Telegraf exec input plugin
+# Add to telegraf.conf:
+[[inputs.exec]]
+  commands = ["python3 /path/to/parse_modem_status.py"]
+  timeout = "30s"
+  data_format = "influx"
+```
+
 ##### Nerdy details
 
 [PurpleAir Sensor JSON Documentation](https://community.purpleair.com/t/sensor-json-documentation/6917)
