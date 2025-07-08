@@ -60,15 +60,17 @@ minikube service mygraphana-grafana --url
 
 ## Cable Modem Status Parser
 
-The `parse_modem_status.py` script parses HTML status pages from cable modems and outputs key metrics in InfluxDB line protocol format.
+The `parse_modem_status.py` script parses HTML status pages from cable modems and outputs comprehensive metrics in InfluxDB line protocol format.
 
 ### Features
 
-- Fetches modem status from HTTP endpoint
-- Parses HTML tables to extract key metrics
+- Fetches modem status from multiple HTTP endpoints
+- Parses HTML tables to extract key metrics and connection status
+- Extracts detailed channel performance data (downstream/upstream)
 - Converts uptime strings to seconds
+- Calculates aggregated channel statistics (power, SNR, error counts)
 - Outputs data in InfluxDB line protocol format
-- Handles network errors gracefully
+- Handles network errors gracefully with fallback support
 
 ### Usage
 
@@ -92,13 +94,43 @@ The script outputs InfluxDB line protocol with the following structure:
 - `docsis_version`: DOCSIS specification compliance
 - `uptime_seconds`: Uptime in seconds (numeric)
 - `uptime_raw`: Raw uptime string from modem
+- `connectivity_state`: Connection state (e.g., "OK")
+- `boot_state`: Boot state (e.g., "OK")
+- `configuration_file`: Configuration file status
+- `security`: Security status (e.g., "Enabled")
+- `docsis_network_access`: DOCSIS network access status
+- `downstream_channels_total`: Total number of downstream channels
+- `downstream_channels_locked`: Number of locked downstream channels
+- `upstream_channels_total`: Total number of upstream channels
+- `upstream_channels_locked`: Number of locked upstream channels
+- `downstream_avg_power`: Average downstream power in dBmV
+- `downstream_avg_snr`: Average downstream SNR in dB
+- `upstream_avg_power`: Average upstream power in dBmV
+- `downstream_corrected_total`: Total corrected errors across all downstream channels
+- `downstream_uncorrectable_total`: Total uncorrectable errors across all downstream channels
 - `status`: Always 1 (indicates modem is online)
 
 ### Example Output
 
 ```
-cable_modem_status,mac_address=C8:63:FC:A2:1F:C5,serial_number=A4M5J1685600275,hardware_version=6 software_version="D31CM-PEREGRINE-1.1.1.0-GA-11-NOSH",docsis_version="Docsis 3.1",uptime_seconds=2484908,uptime_raw="28 days 18h:15m:08s.00",status=1 1751918337127612928
+cable_modem_status,mac_address=C8:63:FC:A2:1F:C5,serial_number=A4M5J1685600275,hardware_version=6 software_version="D31CM-PEREGRINE-1.1.1.0-GA-11-NOSH",docsis_version="Docsis 3.1",uptime_seconds=2562712,uptime_raw="29 days 15h:51m:52s.00",downstream_channels_total=32,downstream_channels_locked=32,upstream_channels_total=4,upstream_channels_locked=4,downstream_avg_power=7.45,downstream_avg_snr=40.39,upstream_avg_power=43.75,downstream_corrected_total=291944657,downstream_uncorrectable_total=2492218,status=1 1751996138995393024
 ```
+
+### Data Sources
+
+The script fetches data from two endpoints on the cable modem:
+
+1. **`http://192.168.100.1/cmswinfo.html`** - Basic modem information including:
+   - Hardware and software versions
+   - MAC address and serial number
+   - DOCSIS version compliance
+   - Uptime information
+
+2. **`http://192.168.100.1/cmconnectionstatus.html`** - Connection status and channel data including:
+   - Startup procedure status (connectivity, boot state, configuration)
+   - Downstream bonded channels (power levels, SNR, error counts)
+   - Upstream bonded channels (power levels, frequency, channel types)
+   - Security and network access status
 
 ### Dependencies
 
@@ -123,6 +155,22 @@ python3 parse_modem_status.py | curl -i -XPOST 'http://localhost:8086/write?db=n
   timeout = "30s"
   data_format = "influx"
 ```
+
+### Monitoring and Alerting
+
+The comprehensive metrics enable effective monitoring of cable modem health:
+
+**Key Metrics to Monitor:**
+- **Channel Lock Status**: `downstream_channels_locked` and `upstream_channels_locked` should equal their respective totals
+- **Signal Quality**: `downstream_avg_power` (typically 7-10 dBmV) and `downstream_avg_snr` (>30 dB preferred)
+- **Error Rates**: Monitor `downstream_corrected_total` and `downstream_uncorrectable_total` for increasing error counts
+- **Connectivity**: `connectivity_state` and `boot_state` should be "OK" for healthy operation
+
+**Alerting Examples:**
+- Alert if `downstream_channels_locked` < `downstream_channels_total` (indicates channel bonding issues)
+- Alert if `downstream_avg_snr` < 25 dB (poor signal quality)
+- Alert if `downstream_avg_power` < 5 dBmV or > 15 dBmV (signal level issues)
+- Alert on rapid increases in uncorrectable error rates
 
 ##### Nerdy details
 
