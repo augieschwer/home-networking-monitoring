@@ -94,7 +94,7 @@ def extract_channel_info(html_content):
         html_content (str): HTML content from connection status page
         
     Returns:
-        dict: Dictionary containing aggregated channel metrics
+        tuple: (aggregated_data, downstream_channels, upstream_channels)
     """
     soup = BeautifulSoup(html_content, 'html.parser')
     
@@ -185,7 +185,7 @@ def extract_channel_info(html_content):
             except (ValueError, TypeError):
                 pass  # Skip if parsing fails
     
-    return aggregated_data
+    return aggregated_data, downstream_channels, upstream_channels
 
 
 def format_influxdb_line(measurement, tags, fields, timestamp=None):
@@ -242,6 +242,90 @@ def format_influxdb_line(measurement, tags, fields, timestamp=None):
     return f"{measurement}{tag_str} {field_str} {timestamp}"
 
 
+def format_channel_lines(base_tags, downstream_channels, upstream_channels, timestamp=None):
+    """
+    Format individual channel data as InfluxDB line protocol.
+    
+    Args:
+        base_tags (dict): Base tag key-value pairs from modem info
+        downstream_channels (list): List of downstream channel data
+        upstream_channels (list): List of upstream channel data
+        timestamp (int, optional): Unix timestamp in nanoseconds
+        
+    Returns:
+        list: List of InfluxDB line protocol strings for each channel
+    """
+    if timestamp is None:
+        timestamp = int(time.time() * 1_000_000_000)  # Convert to nanoseconds
+    
+    lines = []
+    
+    # Format downstream channels
+    for channel in downstream_channels:
+        tags = base_tags.copy()
+        tags['channel_id'] = channel['channel_id']
+        tags['direction'] = 'downstream'
+        
+        fields = {
+            'lock_status': channel['lock_status'],
+            'modulation': channel['modulation'],
+            'frequency': channel['frequency'],
+            'power': channel['power'],
+            'snr': channel['snr'],
+            'corrected': channel['corrected'],
+            'uncorrectables': channel['uncorrectables']
+        }
+        
+        # Convert numeric values
+        try:
+            if 'Hz' in channel['frequency']:
+                fields['frequency_hz'] = int(channel['frequency'].replace(' Hz', ''))
+            if 'dBmV' in channel['power']:
+                fields['power_dbmv'] = float(channel['power'].replace(' dBmV', ''))
+            if 'dB' in channel['snr']:
+                fields['snr_db'] = float(channel['snr'].replace(' dB', ''))
+            if channel['corrected'].isdigit():
+                fields['corrected_errors'] = int(channel['corrected'])
+            if channel['uncorrectables'].isdigit():
+                fields['uncorrectable_errors'] = int(channel['uncorrectables'])
+        except (ValueError, TypeError):
+            pass  # Keep original string values if conversion fails
+        
+        line = format_influxdb_line('cable_modem_channel', tags, fields, timestamp)
+        lines.append(line)
+    
+    # Format upstream channels
+    for channel in upstream_channels:
+        tags = base_tags.copy()
+        tags['channel_id'] = channel['channel_id']
+        tags['direction'] = 'upstream'
+        
+        fields = {
+            'channel': channel['channel'],
+            'lock_status': channel['lock_status'],
+            'channel_type': channel['channel_type'],
+            'frequency': channel['frequency'],
+            'width': channel['width'],
+            'power': channel['power']
+        }
+        
+        # Convert numeric values
+        try:
+            if 'Hz' in channel['frequency']:
+                fields['frequency_hz'] = int(channel['frequency'].replace(' Hz', ''))
+            if 'Hz' in channel['width']:
+                fields['width_hz'] = int(channel['width'].replace(' Hz', '').replace(' kHz', '000'))
+            if 'dBmV' in channel['power']:
+                fields['power_dbmv'] = float(channel['power'].replace(' dBmV', ''))
+        except (ValueError, TypeError):
+            pass  # Keep original string values if conversion fails
+        
+        line = format_influxdb_line('cable_modem_channel', tags, fields, timestamp)
+        lines.append(line)
+    
+    return lines
+
+
 def main():
     """Main function to fetch and parse modem status."""
     urls = [
@@ -250,6 +334,8 @@ def main():
     ]
 
     all_modem_data = {}
+    downstream_channels = []
+    upstream_channels = []
     
     for url in urls:
         try:
@@ -266,7 +352,7 @@ def main():
             
             # Extract channel information if this is the connection status page
             if 'cmconnectionstatus.html' in url:
-                channel_data = extract_channel_info(response.text)
+                channel_data, downstream_channels, upstream_channels = extract_channel_info(response.text)
                 all_modem_data.update(channel_data)
                 
             # Only report no data if both modem_data and channel_data are empty for this URL
@@ -332,9 +418,15 @@ def main():
     # Add a status field to indicate the modem is online
     fields['status'] = 1
     
-    # Generate InfluxDB line protocol
+    # Generate InfluxDB line protocol for aggregated data
     line = format_influxdb_line("cable_modem_status", tags, fields)
     print(line)
+    
+    # Generate InfluxDB line protocol for individual channels
+    if downstream_channels or upstream_channels:
+        channel_lines = format_channel_lines(tags, downstream_channels, upstream_channels)
+        for channel_line in channel_lines:
+            print(channel_line)
     
     return 0
 

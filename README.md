@@ -82,6 +82,8 @@ python3 parse_modem_status.py
 
 The script outputs InfluxDB line protocol with the following structure:
 
+#### Aggregated Modem Status
+
 **Measurement**: `cable_modem_status`
 
 **Tags** (static identifiers):
@@ -110,11 +112,57 @@ The script outputs InfluxDB line protocol with the following structure:
 - `downstream_uncorrectable_total`: Total uncorrectable errors across all downstream channels
 - `status`: Always 1 (indicates modem is online)
 
+#### Individual Channel Data
+
+**Measurement**: `cable_modem_channel`
+
+**Tags**:
+- `mac_address`: Cable modem MAC address
+- `serial_number`: Device serial number
+- `hardware_version`: Hardware version
+- `channel_id`: Unique identifier for the channel
+- `direction`: Channel direction (`downstream` or `upstream`)
+
+**Fields** (downstream channels):
+- `lock_status`: Lock status of the channel
+- `modulation`: Modulation type (e.g., "QAM256", "Other")
+- `frequency`: Frequency (raw string)
+- `power`: Power level in string format
+- `snr`: Signal-to-noise ratio in string format
+- `corrected`: Corrected errors (raw string)
+- `uncorrectables`: Uncorrectable errors (raw string)
+- `frequency_hz`: Frequency in Hz (numeric)
+- `power_dbmv`: Power in dBmV (numeric)
+- `snr_db`: SNR in dB (numeric)
+- `corrected_errors`: Corrected errors (numeric)
+- `uncorrectable_errors`: Uncorrectable errors (numeric)
+
+**Fields** (upstream channels):
+- `channel`: Channel number
+- `lock_status`: Lock status of the channel
+- `channel_type`: Channel type (e.g., "SC-QAM", "OFDM Upstream")
+- `frequency`: Frequency (raw string)
+- `width`: Channel width (raw string)
+- `power`: Power level in string format
+- `frequency_hz`: Frequency in Hz (numeric)
+- `width_hz`: Channel width in Hz (numeric)
+- `power_dbmv`: Power in dBmV (numeric)
+
 ### Example Output
 
+#### Aggregated Modem Status
 ```
 cable_modem_status,mac_address=C8:63:FC:A2:1F:C5,serial_number=A4M5J1685600275,hardware_version=6 software_version="D31CM-PEREGRINE-1.1.1.0-GA-11-NOSH",docsis_version="Docsis 3.1",uptime_seconds=2562712,uptime_raw="29 days 15h:51m:52s.00",downstream_channels_total=32,downstream_channels_locked=32,upstream_channels_total=4,upstream_channels_locked=4,downstream_avg_power=7.45,downstream_avg_snr=40.39,upstream_avg_power=43.75,downstream_corrected_total=291944657,downstream_uncorrectable_total=2492218,status=1 1751996138995393024
 ```
+
+#### Individual Channel Data
+```
+cable_modem_channel,mac_address=C8:63:FC:A2:1F:C5,serial_number=A4M5J1685600275,hardware_version=6,channel_id=33,direction=downstream lock_status="Locked",modulation="Other",frequency="741000000 Hz",power="8.9 dBmV",snr="40.0 dB",corrected="312906486",uncorrectables="56",frequency_hz=741000000,power_dbmv=8.9,snr_db=40.0,corrected_errors=312906486,uncorrectable_errors=56 1751999730941605888
+
+cable_modem_channel,mac_address=C8:63:FC:A2:1F:C5,serial_number=A4M5J1685600275,hardware_version=6,channel_id=1,direction=upstream channel="1",lock_status="Locked",channel_type="SC-QAM",frequency="12400000 Hz",width="3200000 Hz",power="41.0 dBmV",frequency_hz=12400000,width_hz=3200000,power_dbmv=41.0 1751999550196814080
+```
+
+**Note**: The script outputs one aggregated status line followed by individual lines for each channel (typically 32 downstream + 4 upstream = 36 channel lines).
 
 ### Data Sources
 
@@ -160,6 +208,7 @@ python3 parse_modem_status.py | curl -i -XPOST 'http://localhost:8086/write?db=n
 
 The comprehensive metrics enable effective monitoring of cable modem health:
 
+#### Aggregated Monitoring
 **Key Metrics to Monitor:**
 - **Channel Lock Status**: `downstream_channels_locked` and `upstream_channels_locked` should equal their respective totals
 - **Signal Quality**: `downstream_avg_power` (typically 7-10 dBmV) and `downstream_avg_snr` (>30 dB preferred)
@@ -171,6 +220,21 @@ The comprehensive metrics enable effective monitoring of cable modem health:
 - Alert if `downstream_avg_snr` < 25 dB (poor signal quality)
 - Alert if `downstream_avg_power` < 5 dBmV or > 15 dBmV (signal level issues)
 - Alert on rapid increases in uncorrectable error rates
+
+#### Individual Channel Monitoring
+**Per-Channel Metrics:**
+- **Lock Status**: Monitor individual channels for `lock_status != "Locked"`
+- **Power Levels**: Track `power_dbmv` for each channel (downstream: 6-10 dBmV, upstream: 35-50 dBmV)
+- **Signal Quality**: Monitor `snr_db` for each downstream channel (>30 dB preferred)
+- **Error Rates**: Track `corrected_errors` and `uncorrectable_errors` growth per channel
+- **Frequency Stability**: Monitor `frequency_hz` for unexpected changes
+
+**Per-Channel Alerting:**
+- Alert if any channel has `lock_status != "Locked"`
+- Alert if downstream `power_dbmv` < 5 or > 15 for any channel
+- Alert if downstream `snr_db` < 25 for any channel
+- Alert if upstream `power_dbmv` < 30 or > 55 for any channel
+- Alert on rapid increases in per-channel error rates
 
 ##### Nerdy details
 
