@@ -57,6 +57,12 @@ minikube service mygraphana-grafana --url
 ![Screenshot from 2025-07-06 14-48-07](https://github.com/user-attachments/assets/385af34e-9c31-4ad7-ab29-b3a44f469209)
 ![Screenshot from 2025-07-06 14-48-36](https://github.com/user-attachments/assets/e5f34aac-64b8-42a1-afe8-8f6126c7a3b3)
 
+##### SB8200
+
+<img width="839" height="958" alt="Screenshot from 2025-07-10 13-47-12" src="https://github.com/user-attachments/assets/8cd29ed0-ce6e-4d84-8f7f-69f92eb09cf7" />
+<img width="836" height="920" alt="Screenshot from 2025-07-10 13-48-32" src="https://github.com/user-attachments/assets/ba539867-bfec-44b2-82b7-bae741aec3dc" />
+<img width="840" height="919" alt="Screenshot from 2025-07-10 13-49-35" src="https://github.com/user-attachments/assets/6f30d5a8-c233-40f5-9527-fd5abdd2e0bf" />
+
 
 ## Cable Modem Status Parser
 
