@@ -177,6 +177,14 @@ config:
           - "wan_ethernetLink"
           - "wan_ipAddress"
           - "wan_online"
+    - ping:
+        urls:
+          - "192.168.86.1"
+          - "192.168.86.31"
+          - "192.168.86.32"
+          - "192.168.100.1"
+          - "ping.sonic.net"
+        method: "native"
     - statsd:
         service_address: ":8125"
         percentiles:
