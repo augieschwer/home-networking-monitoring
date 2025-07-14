@@ -187,6 +187,7 @@ config:
           - "ping.sonic.net"
         method: "native"
     - exec:
+        interval: "5m"
         commands:
           - "python3 /opt/scripts/parse_modem_status.py"
         timeout: "30s"
