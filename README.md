@@ -242,7 +242,16 @@ The comprehensive metrics enable effective monitoring of cable modem health:
 - Alert if upstream `power_dbmv` < 30 or > 55 for any channel
 - Alert on rapid increases in per-channel error rates
 
-##### Nerdy details
+## Testing
+
+Grab the [augieschwer/telegraf-modem-monitor](https://hub.docker.com/r/augieschwer/telegraf-modem-monitor) image; which is based off of the official Telegraf image and includes the code to retrieve the stats from the sb8200.
+
+```
+docker pull augieschwer/telegraf-modem-monitor
+docker run -v ./configs/telegraf:/etc/telegraf/telegraf.d/ augieschwer/telegraf-modem-monitor --test --config-directory /etc/telegraf/telegraf.d/
+```
+
+## Nerdy details
 
 [PurpleAir Sensor JSON Documentation](https://community.purpleair.com/t/sensor-json-documentation/6917)
 
