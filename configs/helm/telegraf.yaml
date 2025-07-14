@@ -186,6 +186,11 @@ config:
           - "192.168.100.1"
           - "ping.sonic.net"
         method: "native"
+    - exec:
+        commands:
+          - "python3 /opt/scripts/parse_modem_status.py"
+        timeout: "30s"
+        data_format: "influx"
 metrics:
   health:
     enabled: false
