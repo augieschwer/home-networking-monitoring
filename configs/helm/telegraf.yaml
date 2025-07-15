@@ -1,11 +1,12 @@
 ## Default values.yaml for Telegraf
 ## This is a YAML-formatted file.
 ## ref: https://hub.docker.com/r/library/telegraf/tags/
+## https://hub.docker.com/r/augieschwer/telegraf-modem-monitor/tags/
 
 replicaCount: 1
 image:
-  repo: "docker.io/library/telegraf"
-  tag: "1.35-alpine"
+  repo: "augieschwer/telegraf-modem-monitor"
+  tag: "latest"
   pullPolicy: IfNotPresent
 podAnnotations: {}
 podLabels: {}
@@ -185,6 +186,12 @@ config:
           - "192.168.100.1"
           - "ping.sonic.net"
         method: "native"
+    - exec:
+        interval: "5m"
+        commands:
+          - "python3 /opt/scripts/parse_modem_status.py"
+        timeout: "30s"
+        data_format: "influx"
     - statsd:
         service_address: ":8125"
         percentiles:
