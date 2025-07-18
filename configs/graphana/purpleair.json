@@ -1633,7 +1633,7 @@
           ]
         }
       ],
-      "title": "Temperture Inside",
+      "title": "Temperature Inside",
       "transformations": [
         {
           "id": "calculateField",
@@ -1766,7 +1766,7 @@
           ]
         }
       ],
-      "title": "Temperture Outside",
+      "title": "Temperature Outside",
       "transformations": [
         {
           "id": "calculateField",
@@ -2101,5 +2101,5 @@
   "timezone": "browser",
   "title": "PurpleAir",
   "uid": "c0770722-7c14-4649-8713-5a11684c1d66",
-  "version": 29
+  "version": 31
 }
