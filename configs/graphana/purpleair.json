@@ -1563,8 +1563,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 7,
+        "w": 6,
         "x": 0,
         "y": 19
       },
@@ -1604,6 +1604,7 @@
               "type": "fill"
             }
           ],
+          "hide": false,
           "measurement": "purpleair",
           "orderByTime": "ASC",
           "policy": "default",
@@ -1630,7 +1631,92 @@
               "value": "inside"
             }
           ]
+        }
+      ],
+      "title": "Temperture Inside",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "inside-corrected",
+            "binary": {
+              "left": {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Inside"
+                }
+              },
+              "operator": "-",
+              "right": {
+                "fixed": "8"
+              }
+            },
+            "mode": "binary",
+            "reduce": {
+              "include": [
+                "Inside"
+              ],
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "bequhiwccxds0a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "fahrenheit"
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 6,
+        "y": 19
+      },
+      "id": 12,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.0.1",
+      "targets": [
         {
           "alias": "Outside",
           "datasource": {
@@ -1680,7 +1766,32 @@
           ]
         }
       ],
-      "title": "Temperture",
+      "title": "Temperture Outside",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "alias": "outside-corrected",
+            "binary": {
+              "left": {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Outside"
+                }
+              },
+              "operator": "-",
+              "right": {
+                "fixed": "8"
+              }
+            },
+            "mode": "binary",
+            "reduce": {
+              "reducer": "sum"
+            },
+            "replaceFields": true
+          }
+        }
+      ],
       "type": "stat"
     },
     {
@@ -1714,7 +1825,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 27
+        "y": 26
       },
       "id": 10,
       "options": {
@@ -1858,7 +1969,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 35
+        "y": 34
       },
       "id": 11,
       "options": {
@@ -1990,5 +2101,5 @@
   "timezone": "browser",
   "title": "PurpleAir",
   "uid": "c0770722-7c14-4649-8713-5a11684c1d66",
-  "version": 24
+  "version": 29
 }
