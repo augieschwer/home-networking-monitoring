@@ -1,0 +1,14 @@
+[Unit]
+Description=minikube
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/minikube start
+ExecStop=/usr/local/bin/minikube stop
+User=augie
+Group=augie
+
+[Install]
+WantedBy=multi-user.target
