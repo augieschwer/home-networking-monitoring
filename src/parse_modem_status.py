@@ -359,8 +359,8 @@ def main():
             if not modem_data and not channel_data:
                 print(f"No data extracted from {url}", file=sys.stderr)
 
-        except requests.RequestException as e:
-            print(f"Error fetching modem status from {url}: {e}", file=sys.stderr)
+        except requests.RequestException as exception:
+            print(f"Error fetching modem status from {url}: {exception}", file=sys.stderr)
             continue
 
     if not all_modem_data:
