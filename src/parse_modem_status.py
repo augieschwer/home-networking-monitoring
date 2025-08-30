@@ -11,7 +11,6 @@ import requests
 import re
 import time
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 import sys
 
 
