@@ -7,11 +7,11 @@ key metrics for monitoring in InfluxDB, including basic modem information,
 connection status, and channel performance metrics.
 """
 
-import requests
 import re
-import time
-from bs4 import BeautifulSoup
 import sys
+import time
+import requests
+from bs4 import BeautifulSoup
 
 
 def parse_uptime(uptime_str):
