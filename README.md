@@ -1,3 +1,5 @@
+[![Dev Pylint](https://github.com/augieschwer/home-networking-monitoring/actions/workflows/dev-pylint.yaml/badge.svg?branch=dev&event=push)](https://github.com/augieschwer/home-networking-monitoring/actions/workflows/dev-pylint.yaml)
+
 # home-networking-monitoring
 Documentation and configuration for monitoring my home network and devices on the network; including PurpleAir sensors, and Google Wifi devices, and an Arris SB8200 cable modem.
 
