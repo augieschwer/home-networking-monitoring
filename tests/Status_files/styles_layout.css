@@ -1,0 +1,1028 @@
+/*  L A Y O U T   S T Y L E S  */
+/*  Motorola Mobility - January 2013 - for SBG6582 */
+/*  Layout styles are the definitions for the box model
+	framework/page layout. Always in pixels. */
+/*Arris added - OKCABLECPESBG-4270 -Girdhari 06/25/2015 Modified for Japanese GUI alignment*/
+
+
+/* Wrappers for page (pw) */
+#pw1 {
+	margin:				0 auto;
+	border:				0px solid red;
+	min-width:			980px;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#pw1 {
+		width:				100%;
+		}
+	/* pplu */
+
+/* Unused. Available. */
+#pw2 {}
+#pw3 {}
+#pw4 {}
+
+
+
+
+/* Wrappers for header group (hg) */
+#hg1 {
+	margin:				0 auto;
+	border:				0px solid blue;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#hg1 {
+		width:				100%;
+		}
+	/* pplu */
+
+#hg2 {
+	margin:				0 auto;
+	border:				0px solid blue;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#hg2 {
+		width:				100%;
+		}
+	/* pplu */
+
+#hg3 {
+	margin:				0 auto;
+	border:				0px solid blue;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#hg3 {
+		width:				100%;
+		height:				113px;
+		}
+	/* pplu */
+
+
+#hg4 {
+	margin:				0 auto;
+	border:				0px solid blue;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#hg4 {
+		width:				957px;
+		height:				140px;
+		}
+	/* pplu */
+	
+#hg5 {
+	margin:				0 auto;
+	border:				0px solid blue;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#hg5 {
+		width:				869px;
+		height:				140px;
+		}
+	/* pplu */
+
+
+/* Unused. Available. */
+#hg6 {}
+#hg7 {}
+
+
+#logo {
+	position:				relative;
+	float:					left;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#logo {
+		top:				16px;
+		height:				42px;
+		}
+	/* pplu */
+	
+#binnacleWrapper1 {
+	position:				relative;
+	overflow:				visible;
+	float:					right;
+	z-index:				800;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleWrapper1 {
+		top:				34px;
+		height:				43px;
+		}
+	/* pplu */
+
+.binnacleItems_0 {
+	width:					250px;
+}
+
+.binnacleItems_1 {
+	width:					290px;
+}
+
+.binnacleItems_2 {
+	width:					330px;
+}
+
+.binnacleItems_3 {
+	width:					370px;
+}
+
+.binnacleItems_4 {
+	width:					410px;
+}
+
+.binnacleItems_5 {
+	width:					450px;
+}
+
+.binnacleItems_6 {
+	width:					490px;
+}
+
+.binnacleItems_7 {
+	width:					530px;
+}
+
+.binnacleItems_8 {
+	width:					570px;
+}
+
+.binnacleItems_9 {
+	width:					140px;
+}
+
+#binnacleWrapper2 {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleWrapper2 {
+		overflow:				visible;
+		padding-left:			20px;
+		padding-right:			20px;
+		z-index:				801;
+		}
+	/* pplu */
+	
+#binnacleWrapperLeft {
+	position:				absolute;
+	left:					0px;
+	z-index:				802;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleWrapperLeft {
+		width:				20px;
+		height:				43px;
+		}
+	/* pplu */
+
+#binnacleWrapperMiddle {
+	position:				absolute;
+	left:					20px;
+	right:					20px;
+	z-index:				802;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleWrapperMiddle {
+		height:				43px;
+		}
+	/* pplu */
+
+#binnacleWrapperRight {
+	position:				absolute;
+	right:					0px;
+	z-index:				802;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleWrapperRight {
+		width:				20px;
+		height:				43px;
+		}
+	/* pplu */
+
+#binnacleInnards {
+	position:				relative;
+	overflow:				visible;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleInnards {
+		top:				9px;
+		height:				26px;
+		}
+	/* pplu */
+
+#binnacleModelName {
+	position:				relative;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleModelName {
+		overflow:			hidden;
+		height:				26px;
+		}
+	/* pplu */
+	
+#binnacleModelName .registeredTrademark {
+	position:			relative;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleModelName .registeredTrademark {
+		top:				-0.4em;
+		}
+	/* pplu */
+	
+
+#binnacleLogout {
+	position:				relative;
+	float:					right;
+	/* background-color:		yellow; */
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleLogout {
+		top:					4px;
+		margin-left:			12px;
+		width:					51px;
+		height:					19px;
+		}
+	/* pplu */
+
+#binnacleLogoutText {		
+	position:			absolute;
+	float:					left;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleLogoutText {
+		width:				51px;
+		height:				19px;
+		}
+	/* pplu */
+
+.logoutButton {
+	position:				relative;
+	display:				inline;
+	padding:				0px;
+	margin:					0px;
+	cursor:					pointer;
+	/* background-color:		yellow; */
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.logoutButton {
+		width:					51px;
+		height:					19px;
+		}
+	/* pplu */
+	
+
+/*  F L O A T E R  */
+
+/* To use vertCenterWrap 1, 2, and 3, a height must be specified on
+the vertCenterWrap1 classed div. Do this with another class on the
+same div. */
+
+.vertCenterWrap1  {
+	display: 				table; 
+	#position: 				relative; 
+	overflow: 				hidden;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.vertCenterWrap1  {}
+	/* pplu */
+
+.vertCenterWrap2 {
+	#position: 				absolute;
+	#top: 					50%;
+	display: 				table-cell;
+	vertical-align: 		middle;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.vertCenterWrap2 {}
+	/* pplu */
+	
+.vertCenterWrap3 {
+	#position:				relative;
+	#top:					-50%;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.vertCenterWrap3 {}
+	/* pplu */
+
+	
+/*  H O M E  */
+	
+#wrapperHome {
+	margin:					0 auto;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#wrapperHome {
+		width:						939px;
+		height:						476px;
+		}
+	/* pplu */
+	
+#containerHomeItems {
+	position:				relative;
+	z-index:				205;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#containerHomeItems {
+		left:					30px;
+		width:					879px;
+		height:					476px;
+		}
+	/* pplu */
+	
+#homeLeftBarWrapper {
+	float:					left;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeLeftBarWrapper {
+		width:					539px;
+		height:					215px;
+		margin-top:				169px;
+		}
+	/* pplu */
+
+.homeLeftBarHitBox {
+	position:				absolute;
+	z-index:				210;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeLeftBarHitBox {
+		width:					539px;
+		height:					143px;
+		}
+	/* pplu */
+	
+#homeLeftBarContentWrapper {
+	position:				absolute;
+	z-index:				200;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeLeftBarContentWrapper {
+		width:					539px;
+		height:					143px;
+		}
+	/* pplu */
+	
+#homeLeftBarContent {
+	position:				absolute;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeLeftBarContent {
+		width:					523px;
+		height:					143px;
+		}
+	/* pplu */
+
+#homeLeftBarContentIcon {
+	float:					left;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeLeftBarContentIcon {
+		width:					100px;
+		height:					143px;
+		}
+	/* pplu */	
+	
+#homeLeftBarContentText {
+	float:					left;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeLeftBarContentText {
+		width:					423px;
+		height:					143px;
+		}
+	/* pplu */
+
+.hlbcv1 {
+	display:				table;
+	position:				relative;
+	overflow:				hidden;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.hlbcv1 {
+		height:					143px;
+		}
+	/* pplu */	
+	
+.hlbcv2 {
+	*position: 				absolute; 
+	top: 					50%;
+	display: 				table-cell;
+	vertical-align: 		middle;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.hlbcv2 {}
+	/* pplu */	
+	
+.hlbcv3 {
+	position: 				relative;
+	top: 					-50%;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.hlbcv3 {
+		margin-left:			10px;
+		margin-right:			20px;
+		}
+	/* pplu */	
+	
+.homeLeftBarUnderBox {
+	position:				absolute;
+	z-index:				190;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeLeftBarUnderBox {
+		width:					539px;
+		height:					143px;
+		}
+	/* pplu */	
+
+#homeLeftBarRightShadow  {
+	float:					right;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeLeftBarRightShadow  {
+		width:					16px;
+		height:					143px;
+		}
+	/* pplu */
+	
+#homeRightBarWrapper  {
+	float:					right;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeRightBarWrapper {
+		width:					340px;
+		height:					476px;
+		}
+	/* pplu */	
+	
+#homeRightBarWrapperSpacerTop.numVisibleItems_1  {
+	float:					left;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeRightBarWrapperSpacerTop.numVisibleItems_1 {
+		height:					200px;
+		width:					340px;
+		}
+	/* pplu */	
+	
+
+#homeRightBarWrapperSpacerTop.numVisibleItems_2  {
+	float:					left;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeRightBarWrapperSpacerTop.numVisibleItems_2 {
+		height:					162px;
+		width:					340px;
+		}
+	/* pplu */
+
+#homeRightBarWrapperSpacerTop.numVisibleItems_3  {
+	float:					left;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeRightBarWrapperSpacerTop.numVisibleItems_3 {
+		height:					120px;
+		width:					340px;
+		}
+	/* pplu */
+	
+#homeRightBarWrapperSpacerTop.numVisibleItems_4  {
+	float:					left;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeRightBarWrapperSpacerTop.numVisibleItems_4 {
+		height:					80px;
+		width:					340px;
+		}
+	/* pplu */
+	
+#homeRightBarWrapperSpacerTop.numVisibleItems_5  {
+	float:					left;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeRightBarWrapperSpacerTop.numVisibleItems_5 {
+		height:					50px;
+		width:					340px;
+		}
+	/* pplu */
+	
+#homeRightBarWrapperSpacerTop.numVisibleItems_6  {
+	float:					left;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeRightBarWrapperSpacerTop.numVisibleItems_6 {
+		height:					5px;
+		width:					340px;
+		}
+	/* pplu */
+	
+.homeRightBarItemWrapper  {
+	float:					left;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeRightBarItemWrapper {
+		height:					77px;
+		width:					340px;
+		}
+	/* pplu */
+	
+.homeRightBarHitBox  {
+	position:				absolute;
+	z-index:				210;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeRightBarHitBox {
+		height:					77px;
+		width:					340px;
+		}
+	/* pplu */
+
+.homeRightBarContentBox  {
+	position:				absolute;
+	z-index:				200;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeRightBarContentBox {
+		height:					77px;
+		width:					340px;
+		}
+	/* pplu */
+	
+.homeRightBarUnderBox   {
+	position:				absolute;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeRightBarUnderBox  {
+		height:					77px;
+		width:					340px;
+		}
+	/* pplu */
+	
+.homeMenuItemIcon  {
+	float:					left;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeMenuItemIcon {
+		width:					50px;
+		height:					50px;
+		margin-top:				12px;
+		margin-left:			18px;
+		margin-right:			16px;
+		}
+	/* pplu */
+	
+.homeMenuItemDescription  {
+	float:					right;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeMenuItemDescription {
+		width:					256px;
+		height:					77px;
+		}
+	/* pplu */
+	
+.hmidv1 {
+	display:				table;
+	position:				relative;
+	overflow:				hidden;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.hmidv1 {
+		height:					77px;
+		}
+	/* pplu */
+	
+.hmidv2 {
+	*position: 				absolute; 
+	top: 					50%;
+	display: 				table-cell;
+	vertical-align: 		middle;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.hmidv2 {}
+	/* pplu */
+
+.hmidv3 {
+	position: 				relative;
+	top: 					-50%;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.hmidv3 {
+		margin-right:			10px;
+		}
+	/* pplu */
+	
+#wrapperShadows {
+	position:				absolute;
+	z-index:				200;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#wrapperShadows {
+		width:					939px;
+		height:					476px;
+		}
+	/* pplu */
+	
+#containerPhotos {
+	position:				relative;
+	z-index:				198;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#containerPhotos {
+		left:					30px;
+		width:					879px;
+		height:					476px;
+		}
+	/* pplu */
+	
+.homePhoto {
+	position:				absolute;
+	float:					left;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homePhoto {
+		width:					879px;
+		height:					476px;
+		}
+	/* pplu */
+
+
+
+/*   H E L P   I L L U S T R A T I O N S  */
+
+.helpIllustrationWrap1 {
+	display:			block;
+	position:			relative;
+	width:				850px;
+	height:				250px;
+	margin-top:			10px;
+	margin-bottom:		25px;
+}
+
+.helpIllustrationWrap2 {
+	display:			block;
+	position:			absolute;
+	width:				850px;
+	height:				250px;
+	overflow:			hidden;
+	z-index:			101;
+}
+
+.helpIllustrationTextWrap {
+	display:			block;
+	position:			absolute;
+	z-index:			101;
+}
+
+.helpIllustrationTextWrap span {
+	display:			block;
+	position:			relative;
+}
+
+
+
+/* gap (vertical) wrappers, one id per gap
+As the gaps are a reused, repeating element they are classed rather than IDed
+But, one structural "hook" ID is provided around each gap
+top menu top gap = tmtg 
+top menu bottom gap = tmbg
+bottom menu top gap = bmtg
+bottom menu bottom gap = bmbg
+*/
+#tmtg, #tmbg, #bmtg, #bmbg {}
+
+
+/* Wrappers for top menu top gap (tmtg) */
+.gap1 {
+	margin:				0 auto;
+	width:				100%;
+	border:				0px solid black;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.gap1 {}
+	/* pplu */
+
+.gap2 {
+	margin:				0 auto;
+	width:				100%;
+	border:				0px solid black;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.gap2 {
+		height:				14px;
+	}
+	/* pplu */
+
+
+/* Unused. Available. */
+.gap3 {}
+.gap4 {}
+
+
+
+/* Wrappers for top menu group (tmg) */
+#tmg1 {
+	margin:				0 auto;
+	border:				0px solid pink;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#tmg1 {
+		width:				100%;
+		}
+	/* pplu */
+	
+
+#tmg2 {
+	margin:				0 auto;
+	border:				0px solid pink;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#tmg1 {
+		width:				100%;
+		}
+	/* pplu */
+
+
+#tmg3 {
+	margin:				0 auto;
+	border:				0px solid pink;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#tmg3 {
+		width:				957px;
+		}
+	/* pplu */
+	
+#tmg4 {
+	margin:				0 auto;
+	border:				0px solid pink;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#tmg4 {
+		height:				49px;
+		width:				869px;
+		}
+	/* pplu */
+
+/* Unused. Available. */
+#tmg5 {}
+#tmg6 {}
+
+
+
+/* Wrappers for body group (bg) */
+#bg1 {
+	margin:				0 auto;
+	border:				0px solid yellow;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#bg1 {
+		width:				100%;
+		}
+	/* pplu */
+
+#bg2 {
+	margin:				0 auto;
+	border:				0px solid purple;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#bg2 {
+		/* TEMP DISABLE width:				957px; */
+		}
+	/* pplu */
+	
+#bg3 {
+	margin:				0 auto;
+	border:				0px solid purple;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#bg3 {}
+	/* pplu */
+
+
+/* Unused. Available. */
+#bg4 {}
+#bg5 {}
+
+
+/* Wrappers for body header (bh) */
+#bh1 {
+	margin:				0 auto;
+	border:				0px solid orange;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#bh1 {
+		width:				100%;
+		}
+	/* pplu */
+
+#bh2 {
+	margin:				0 auto;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#bh2 {
+		border:				1px dotted white;
+		width:				869px;
+		}
+	/* pplu */
+
+
+/* Unused. Available. */
+#bh3 {}
+#bh4 {}
+
+
+/* Wrappers for explanation text (et) */
+#et1 {
+	margin:				0 auto;
+	border:				0px solid orange;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#et1 {
+		width:				100%;
+		}
+	/* pplu */
+
+#et2 {
+	margin:				0 auto;
+	border:				0px solid orange;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#et2 {
+		width:				869px;
+		}
+	/* pplu */
+
+
+/* Unused. Available. */
+#et3 {}
+#et4 {}
+
+
+
+/* Wrappers for bottom menu group (bmg) */
+#bmg1 {
+	margin:				0 auto;
+	border:				0px solid green;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#bmg1 {
+		width:				100%;
+		}
+	/* pplu */
+
+#bmg2 {
+	margin:				0 auto;
+	border:				0px solid green;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#bmg2 {
+		width:				100%;
+		}
+	/* pplu */
+
+#bmg3 {
+	margin:				0 auto;
+	border:				0px solid green;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#bmg3 {
+		width:				957px;
+		}
+	/* pplu */
+
+#bmg4 {
+	margin:				0 auto;
+	border:				0px solid green;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#bmg4 {
+		width:				869px;
+		}
+	/* pplu */
+
+/* Unused. Available. */
+#bmg5 {}
+#bmg6 {}
+
+
+
+/* Wrappers for footer group (fg) */
+#fg1 {
+	margin:				0 auto;
+	border:				0px solid green;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fg1 {
+		width:				100%;
+		}
+	/* pplu */
+	
+#fg2 {
+	margin:				0 auto;
+	border:				0px solid green;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fg2 {
+		width:				100%;
+		}
+	/* pplu */
+	
+/* Wrappers for footer group (fg) */
+#fg3 {
+	margin:				0 auto;
+	border:				0px solid green;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fg3 {
+		width:				100%;
+		}
+	/* pplu */
+	
+#fg4 {
+	margin:				0 auto;
+	border:				0px solid green;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fg4 {
+		width:				957px;
+		}
+	/* pplu */	
+
+#fg5 {
+	margin:				0 auto;
+	border:				0px solid green;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fg5 {
+		width:				869px;
+		height:				51px;
+		}
+	/* pplu */
+
+/* Unused. Available. */
+#fg6 {}
+#fg7 {}
+
+
+#logo_bottom {
+	position:				relative;
+	float:					left;
+	border:					0px solid purple;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#logo_bottom {
+		/* 1.5U */
+		top:				5px;
+		}
+	/* pplu */
+	
+
+#copyright {
+	position:				relative;
+	float:					right;
+	border:					0px solid purple;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#copyright {
+		/* 1.5U */
+		top:				19px;
+		width:				429px;
+		height:				14px;
+		}
+	/* pplu */
+
+
+
+
+/* Wrappers for footer group bottom light (fgbl) */
+#fgbl1 {
+	margin:				0 auto;
+	border:				0px solid pink;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fgbl1 {
+		width:				100%;
+		}
+	/* pplu */
+
+#fgbl2 {
+	margin:				0 auto;
+	border:				0px solid pink;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fgbl2 {
+		width:				100%;
+		}
+	/* pplu */
+
+#fgbl3 {
+	margin:				0 auto;
+	border:				0px solid pink;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fgbl3 {
+		width:				869px;
+		}
+	/* pplu */
+
+
+/* Unused. Available. */
+#fgbl4 {}

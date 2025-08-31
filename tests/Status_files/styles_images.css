@@ -1,0 +1,566 @@
+/*  I M A G E   A N D   C O L O R   S T Y L E S  */
+/*  Motorola Mobility - January 2013 - for SBG6582 */
+
+/*  Image and color styles are the image-loading styles
+	and also the color style choices for framework items,
+	excluding typographic objects. Always in pixels / hex. */
+
+#preloaded-images {
+	position:					absolute;
+	overflow:					hidden;
+	left:						-9999px;
+	top:						-9999px;
+	z-index:					40000;
+	width:						1px;
+	height:						1px;
+}
+
+body {
+	background-color:			#31281F;
+	background-image:			url('background.jpg'); 
+	background-repeat:			repeat-x;
+}
+
+img {
+	border:					0px;
+	padding:				0px;
+	margin:					0px;
+}
+
+#hg1 {
+	background-color:		#2F2F2F;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#hg1 {}
+	/* pplu */
+
+
+#hg2 {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#hg2 {
+		background:             url('back_header_compact.png');
+		background-repeat:      repeat-x;
+		}
+	/* pplu */
+
+
+#hg3 {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#hg3 {
+		background:             url('back_ventHoles_compact.png');
+		background-repeat:      repeat;
+		}
+	/* pplu */
+	
+img.binnacleWrapperShim  {
+	width:						20px;
+	height:						43px;
+	/* background-color:			blue; */
+	z-index:					500;
+}
+
+#binnacleWrapperLeft {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleWrapperLeft {
+		background:             url('back_binnacleEndcaps.png');
+		background-repeat:      no-repeat;
+		background-position:	0px 0px;
+		}
+	/* pplu */
+
+	
+#binnacleWrapperMiddle {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleWrapperMiddle {
+		background:             url('back_binnacle.png');
+		background-repeat:      repeat-x;
+		}
+	/* pplu */	
+
+#binnacleWrapperRight {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleWrapperRight {
+		background:             url('back_binnacleEndcaps.png');
+		background-repeat:      no-repeat;
+		background-position:	-20px 0px;
+		}
+	/* pplu */
+	
+
+#logo .logo {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#logo .logo {
+		background:             url('logo_compact_arris.png');
+		background-repeat:      no-repeat;
+		width:					229px;
+		height:					78px;
+		}
+	/* pplu */9
+
+/* blue - U11/7 - serves 1024x768 screens */
+#logo {
+	top:				5px;
+	height:				78px;
+      }
+/* pplu */
+
+.logoutButton {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.logoutButton {
+		background:             url('button_logout.png');
+		background-repeat:      no-repeat;
+		background-position:	0px 0px;
+		}
+	/* pplu */
+
+.logoutButton:hover {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.logoutButton:hover {
+		background:             url('button_logout.png');
+		background-repeat:      no-repeat;
+		background-position:	-51px 0px;
+		}
+	/* pplu */
+
+
+
+/*  H O M E  */
+
+#homeLeftBarWrapper {
+	background-image:		url('back_homeLeftBar2.png');
+	background-repeat:		repeat-x;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeLeftBarWrapper {}
+	/* pplu */
+
+.homeLeftBarHitBox img {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeLeftBarHitBox img {
+		width:					539px;
+		height:					143px;
+		}
+	/* pplu */
+
+.hitChangeAreaHover {
+	background-color:		#E87511;
+	opacity:				.3;
+	filter:					alpha(opacity=30);
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.hitChangeAreaHover {}
+	/* pplu */
+	
+.homeWizardIconImage {
+	background-image:		url('icon_homeWand.png');
+	background-repeat:		no-repeat;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeWizardIconImage {
+		width:					100px;
+		height:					143px;		
+		}
+	/* pplu */
+	
+#homeLeftBarRightShadow {
+	background-image:		url('back_homeLeftBarShadow.png');
+	background-repeat:		repeat-y;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeLeftBarRightShadow {}
+	/* pplu */
+
+
+#homeRightBarWrapper {
+	background-image:		url('back_homeRightBar.png');
+	background-repeat:		repeat-x;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homeRightBarWrapper {}
+	/* pplu */
+
+.homeRightBarHitBox img  {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeRightBarHitBox img {
+		height:					77px;
+		width:					340px;
+		}
+	/* pplu */
+	
+.homeRightBarHitBox img  {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeRightBarHitBox img {
+		height:					77px;
+		width:					340px;
+		}
+	/* pplu */
+
+.homeMenuItemIcon img {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeMenuItemIcon img{
+		height:					50px;
+		width:					50px;
+		}
+	/* pplu */
+
+.homeMenuItemIcon_1 {
+	background-image:		url('sprite_home.png');
+	background-repeat:		no-repeat;
+	background-position:	0px 0px;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeMenuItemIcon_1 {}
+	/* pplu */
+	
+.homeMenuItemIcon_2 {
+	background-image:		url('sprite_home.png');
+	background-repeat:		no-repeat;
+	background-position:	-50px 0px;
+		}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeMenuItemIcon_2 {}
+	/* pplu */
+	
+.homeMenuItemIcon_3 {
+	background-image:		url('sprite_home.png');
+	background-repeat:		no-repeat;
+	background-position:	-100px 0px;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeMenuItemIcon_3 {}
+	/* pplu */
+	
+.homeMenuItemIcon_4 {
+	background-image:		url('sprite_home.png');
+	background-repeat:		no-repeat;
+	background-position:	-150px 0px;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeMenuItemIcon_4 {}
+	/* pplu */
+	
+.homeMenuItemIcon_5 {
+	background-image:		url('sprite_home.png');
+	background-repeat:		no-repeat;
+	background-position:	-200px 0px;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeMenuItemIcon_5 {}
+	/* pplu */
+
+.homeMenuItemIcon_6 {
+	background-image:		url('sprite_home.png');
+	background-repeat:		no-repeat;
+	background-position:	-250px 0px;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeMenuItemIcon_6 {}
+	/* pplu */
+
+	/* Dimention of this is 41x41. Position is 4.5px as this will sit in a container of 50x50.*/
+.homeMenuItemIcon_7 {
+	background-image:		url('icon_login_credentials.png');
+	background-repeat:		no-repeat;
+	background-position:	4.5px 4.5px;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.homeMenuItemIcon_7 {}
+	/* pplu */
+	
+#wrapperShadows {
+	background-image:		url('back_homeShadowDepth.png');
+	background-repeat:		no-repeat;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#wrapperShadows {}
+	/* pplu */
+
+#homePhoto_1 {
+	background-image:		url('sprite_homePhotos.jpg');
+	background-repeat:		no-repeat;
+	background-position:	0px -953px;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homePhoto_1 {}
+	/* pplu */
+	
+#homePhoto_2 {
+	background-image:		url('sprite_homePhotos.jpg');
+	background-repeat:		no-repeat;
+	background-position:	0px -477px;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homePhoto_2 {}
+	/* pplu */
+
+#homePhoto_3 {
+	background-image:		url('sprite_homePhotos.jpg');
+	background-repeat:		no-repeat;
+	background-position:	0px 0px;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#homePhoto_3 {}
+	/* pplu */
+
+
+
+
+/*   H E L P   I L L U S T R A T I O N S  */
+
+.helpIllustrationImage  {
+	position:				relative;
+	z-index:				100;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.helpIllustrationImage  {}
+	/* pplu */	
+
+.sprite_helpIllustrationsNetwork_filters {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.sprite_helpIllustrationsNetwork_filters {
+		width:					850px;
+		height:					250px;
+		background:             url('sprite_helpIllustrationsNetwork.png');
+		background-repeat:      no-repeat;
+		background-position:	0px 0px;
+		}
+	/* pplu */	
+	
+.sprite_helpIllustrationsNetwork_forwarding {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.sprite_helpIllustrationsNetwork_forwarding {
+		width:					850px;
+		height:					250px;
+		background:             url('sprite_helpIllustrationsNetwork.png');
+		background-repeat:      no-repeat;
+		background-position:	0px -250px;
+		}
+	/* pplu */	
+	
+.sprite_helpIllustrationsNetwork_triggers1 {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.sprite_helpIllustrationsNetwork_triggers1 {
+		width:					850px;
+		height:					250px;
+		background:             url('sprite_helpIllustrationsNetwork.png');
+		background-repeat:      no-repeat;
+		background-position:	0px -500px;
+		}
+	/* pplu */	
+	
+.sprite_helpIllustrationsNetwork_triggers2 {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.sprite_helpIllustrationsNetwork_triggers2 {
+		width:					850px;
+		height:					250px;
+		background:             url('sprite_helpIllustrationsNetwork.png');
+		background-repeat:      no-repeat;
+		background-position:	0px -750px;
+		}
+	/* pplu */	
+
+
+/*   O T H E R   P A G E S   */
+
+.introText p {
+	display:				block;
+	background-image:		url('px1_Ux.png');
+	background-repeat:		repeat;
+}
+
+.masterApplyButtonDelayIndicatorImage img {
+	width:					25px;
+	height:					25px;
+	background:             url('icon_animated_spinner25x25.gif');
+	background-repeat:      no-repeat;
+}
+
+.masterApplyButtonSuccessIndicatorImage img {
+	width:					25px;
+	height:					25px;
+	background:             url('icon_success_25x25.png');
+	background-repeat:      no-repeat;
+}
+
+.alertExclamationImage img {
+	width:					10px;
+	height:					25px;
+	background:             url('icon_animated_exclamation.gif');
+	background-repeat:      no-repeat;
+}
+
+/*   B O T T O M   O F   P A G E   */
+
+.gap1 {
+	background-color:	#444444;
+}
+
+.gap2 {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	.gap2 {
+		background:             url('back_gap_U11.png');
+		background-repeat:      repeat-x;
+		}
+	/* pplu */
+	
+	
+#tmg1 {
+	background-color:	#DDDDDD;
+}
+
+#tmg2 {
+		background:             url('back_menu_U11.png');
+		background-repeat:      repeat-x;
+		}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#tmg2 {}
+	/* pplu */
+
+
+#bg1 {
+	background-color:	#FFFFFF;
+}
+
+
+#bmg1 {
+	background-color:		#FFFFFF;
+}
+
+#bmg2 {}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#bmg2 {
+		background:             url('back_menu_bottom_U11.png');
+		background-repeat:      repeat-x;
+		background-position:	bottom;
+		}
+	/* pplu */
+	
+	
+#fg1 {
+	background-color:		#2F2F2F;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fg1 {}
+	/* pplu */
+
+
+	#fg2 {
+		background:             url('back_footer_U11.png');
+		background-repeat:      repeat-x;
+		}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fg2 {}
+	/* pplu */
+
+
+	#fg3 {
+	background:             url('back_ventHoles_compact.png');
+		background-repeat:      repeat;
+	background-position:	0px -1px;
+		}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fg3 {}
+	/* pplu */
+	
+
+	#logo_bottom .logo_bottom {
+		background:             url('logo_small_U11_arris.png');
+		background-repeat:      no-repeat;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#logo_bottom .logo_bottom {
+		width:					120px;
+		height:					45px;
+		}
+	/* pplu */
+
+	/* blue - U11/7 - serves 1024x768 screens */
+	#logo_bottom {
+		/* 1.5U */
+		top:				3px;
+		}
+	/* pplu */	
+	
+#fgbl1 {
+	background-color:		#30271E;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fglb1 {}
+	/* pplu */
+
+
+	#fgbl2 {
+		background:             url('back_bottom_U11.png');
+		background-repeat:      repeat-x;
+		}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fgbl2 {}
+	/* pplu */
+	
+	#fgbl3 {
+		background-repeat:      no-repeat;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#fgbl3 {
+		width:					869px;
+		height:					21px;
+		}
+	/* pplu */
+
+
+/* Model Name color */
+#binnacleModelName {
+	color:				#FFFFFF;
+	font-weight:		bold;
+	text-align:			center;
+	line-height:		26px;
+	}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleModelName {
+		font-size:			0.6em;
+	}
+	/* pplu */
+	
+#binnacleModelName a, #binnacleModelName a:link, #binnacleModelName a:visited, #binnacleModelName a:active {
+	color:				#FFFFFF;
+	text-decoration:	none;
+}	
+
+#binnacleModelName a:hover {
+	color:				#FFFFFF;
+	text-decoration:	underline;
+}	
+
+#binnacleModelName .registeredTrademark {
+	font-weight:		bold;
+	color:				#FFFFFF;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#binnacleModelName .registeredTrademark {
+		font-size:			0.9em;
+		}
+	/* pplu */
+
+/* Copyright Information */
+
+#copyright {
+	color:				#FFFFFF;
+	font-weight:		normal;
+	text-align:			right;
+}
+	/* blue - U11/7 - serves 1024x768 screens */
+	#copyright {
+		font-size:			0.6em;
+		}
+	/* pplu */
+	
+#copyright a, #copyright a:link, #copyright a:active, #copyright a:visited {
+	color:				#FFFFFF;
+	text-decoration:	none;
+}	
+
+#copyright a:hover {
+	color:				#F4AF00;
+	text-decoration:	underline;
+}
+
