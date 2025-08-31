@@ -1,3 +1,4 @@
+[![Main Pylint](https://github.com/augieschwer/home-networking-monitoring/actions/workflows/main-pylint.yaml/badge.svg?branch=main&event=push)](https://github.com/augieschwer/home-networking-monitoring/actions/workflows/main-pylint.yaml)
 [![Dev Pylint](https://github.com/augieschwer/home-networking-monitoring/actions/workflows/dev-pylint.yaml/badge.svg?branch=dev&event=push)](https://github.com/augieschwer/home-networking-monitoring/actions/workflows/dev-pylint.yaml)
 
 # home-networking-monitoring
