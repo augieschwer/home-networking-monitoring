@@ -8,7 +8,8 @@ on:
       - 'src/*'
 
 jobs:
-  build:
+  pylint_dev:
+    name: PyLint dev
     runs-on: ubuntu-latest
     strategy:
       matrix:
