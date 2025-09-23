@@ -1,5 +1,5 @@
 # My Overly Complicated Home Networking and Monitoring Project
-**A 20-Minute Journey from "Just Some Basic Metrics" to Full NOC Insanity**
+**A 20-Minute Journey from "Wired backhaul" to Full NOC style monitoring and metrics**
 
 *Featuring MoCA magic, AI coding assistance, and hard-learned lessons about ISP truck rolls*
 
@@ -9,9 +9,7 @@
 
 ### The Setup That "Worked Fine"
 - Google Wifi mesh with wireless backhaul
-- Mysterious slowdowns and dropouts
 - Zero visibility into actual performance
-- *"I just want to see some metrics..."*
 
 ### The Constraint
 - Existing unused coax throughout house
@@ -44,9 +42,21 @@
 - Don't use too many splitters.
 - Gee it would have been cool to have the Modem data for all these *before* I called.
 
+### Disappoint
+- Don't want to waste all this coax and MoCa devices.
+- Don't want to go back to wireless backhaul for the mesh.
+- Sad panda.
+
 ---
 
-## 4. Scope Creep: The Monitoring Rabbit Hole (4 minutes)
+## 4. Re-architect to keep the MoCa part
+
+### Move things around
+- Keep MoCa
+- Keep wired backhaul
+- Route around splitter limitation that causes problems
+
+## 5. Scope Creep: The Monitoring Rabbit Hole (4 minutes)
 
 ### Week-by-Week Evolution
 ```
@@ -58,6 +68,15 @@ Week 5: "Kubernetes isn't overkill... right?"
 I don't want to write this code.
 Maybe getting PurpleAir and GoogleWifi data would be easier since it's JSON.
 ```
+
+### PurpleAir has some nice data to graph
+
+### Google Wifi less so
+
+### Arris modem has a lot of data
+- But it's not easy to parse
+- There are several existing projects, but none of them just work
+- I really don't want to dig into this code to figure out why the HTML won't parse.
 
 ### Enter AI as Coding Copilot
 - **Claude**: "Help me parse this ugly HTML"
@@ -73,52 +92,30 @@ Maybe getting PurpleAir and GoogleWifi data would be easier since it's JSON.
 
 ---
 
-## 5. The Cable Modem Data Goldmine (3 minutes)
-
-### Arris SB8200 Hidden Metrics
-- HTML status pages with 32+ channel details
-- Signal quality, power levels, error rates per channel
-- Real-time bonding and performance data
-
-### Custom Python Parser + AI
-```python
-# What AI helped build:
-def parse_modem_status():
-    # Fetch from /cmswinfo.html and /cmconnectionstatus.html
-    # Parse ugly HTML tables (thanks, Beautiful Soup)
-    # Convert to InfluxDB line protocol
-    # Handle edge cases AI found
-```
-
-### Metrics That Actually Matter
-- **Channel Bonding**: 32 downstream locked vs total
-- **Signal Quality**: SNR >30dB, power 7-10 dBmV  
-- **Error Rates**: Correctable vs uncorrectable trends
-- **Performance**: Real vs theoretical speeds
-
----
-
 ## 6. The NOC Dashboard (2 minutes)
 
 ### Professional Home Monitoring
 - **Real-time Status**: Visual connection health
 - **Signal Heatmaps**: Per-channel performance
 - **Historical Trends**: Error rates and quality over time
+- Google Wifi data
+
+### Home Air Quality Monitoring
+- Trends over time for AQI
+- Temperature
+- Humidity
 
 ---
 
-## 7. Was Kubernetes Overkill? (2 minutes)
+## 7. Was This All Overkill? (2 minutes)
 
 ### Honest Answer: Yes... But
 - **Overkill**: Definitely more complex than needed
 - **Learning**: Real K8s skills for home projects
 - **Reproducible**: Helm charts for everything
 - **Shareable**: Easy to document and replicate
-
-### The Trade-off
-- More moving parts = more things to break
-- But better organization and GitOps workflow
-- *Your mileage may vary on complexity tolerance*
+- Chance to see how well the robot could write and document code.
+- Some times we do things just because we can.
 
 ---
 
