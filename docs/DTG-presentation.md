@@ -5,15 +5,19 @@
 
 ---
 
-## 1. The Problem (2 minutes)
+## 1. The "Problem" (2 minutes)
 
-### The Setup That "Worked Fine"
+### The Setup That Worked Fine
 - Google Wifi mesh with wireless backhaul
 - Zero visibility into actual performance
 
-### The Constraint
-- Existing unused coax throughout house
-- Challenge: Better network without drilling holes
+### How could it be better?
+- Wired backhaul
+- Some performance metrics
+
+### Constraints
+- I don't really want to drag ethernet through the house
+- I don't really want to figure out how to get ethernet behind my walls
 
 ---
 
