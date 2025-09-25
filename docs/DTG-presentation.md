@@ -130,6 +130,7 @@ Maybe getting PurpleAir and GoogleWifi data would be easier since it's JSON.
 - Want to learn modern monitoring tools
 - Have time for "unnecessary" optimization
 - Need impressive dashboards to show off
+- Want access to the data on your network without having to leave your network
 
 ### Skip This If You:
 - "Good enough" actually is good enough
