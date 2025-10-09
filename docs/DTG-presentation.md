@@ -76,6 +76,8 @@
 ### PurpleAir has some nice data to graph
 You can hit it on an HTTP endpoint inside your network.
 
+`http://192.168.86.250/json?live=true`
+
 ```
 {
   "SensorId": "68:c6:3a:ff:87:6b",
@@ -154,6 +156,8 @@ PA has good docs on what each means: https://community.purpleair.com/t/sensor-js
 
 ### Google Wifi less so
 
+`http://192.168.86.32/api/v1/status`
+
 ```
 {
    "dns": {
@@ -204,6 +208,8 @@ PA has good docs on what each means: https://community.purpleair.com/t/sensor-js
 ```
 
 ### Arris modem has a lot of data
+- `http://192.168.100.1/cmswinfo.htm`
+- `http://192.168.100.1/cmconnectionstatus.html`
 - But it's not easy to parse
 - There are several existing projects, but none of them just work
 - I really don't want to dig into this code to figure out why the HTML won't parse.
