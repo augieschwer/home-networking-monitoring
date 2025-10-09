@@ -74,6 +74,83 @@
 ```
 
 ### PurpleAir has some nice data to graph
+You can hit it on an HTTP endpoint inside your network.
+
+```
+{
+  "SensorId": "68:c6:3a:ff:87:6b",
+  "DateTime": "2025/10/09T21:40:36z",
+  "Geo": "PurpleAir-876b",
+  "Mem": 17200,
+  "memfrag": 10,
+  "memfb": 15552,
+  "memcs": 928,
+  "Id": 52879,
+  "lat": 44.1017,
+  "lon": -121.2855,
+  "Adc": 0.02,
+  "loggingrate": 15,
+  "place": "outside",
+  "version": "7.02",
+  "uptime": 585443,
+  "rssi": -58,
+  "period": 120,
+  "httpsuccess": 5039,
+  "httpsends": 9917,
+  "hardwareversion": "2.0",
+  "hardwarediscovered": "2.0+BME280+PMSX003-B+PMSX003-A",
+  "current_temp_f": 70,
+  "current_humidity": 40,
+  "current_dewpoint_f": 45,
+  "pressure": 892.68,
+  "p25aqic_b": "rgb(112,240,0)",
+  "pm2.5_aqi_b": 38,
+  "pm1_0_cf_1_b": 7,
+  "p_0_3_um_b": 1518,
+  "pm2_5_cf_1_b": 9,
+  "p_0_5_um_b": 404,
+  "pm10_0_cf_1_b": 9,
+  "p_1_0_um_b": 48,
+  "pm1_0_atm_b": 7,
+  "p_2_5_um_b": 2,
+  "pm2_5_atm_b": 9,
+  "p_5_0_um_b": 0,
+  "pm10_0_atm_b": 9,
+  "p_10_0_um_b": 0,
+  "p25aqic": "rgb(50,233,0)",
+  "pm2.5_aqi": 29,
+  "pm1_0_cf_1": 7,
+  "p_0_3_um": 1527,
+  "pm2_5_cf_1": 7,
+  "p_0_5_um": 388,
+  "pm10_0_cf_1": 7,
+  "p_1_0_um": 40,
+  "pm1_0_atm": 7,
+  "p_2_5_um": 0,
+  "pm2_5_atm": 7,
+  "p_5_0_um": 0,
+  "pm10_0_atm": 7,
+  "p_10_0_um": 0,
+  "pa_latency": 554,
+  "response": -11,
+  "response_date": 1760045970,
+  "latency": 597,
+  "wlstate": "Connected",
+  "status_0": 2,
+  "status_1": 2,
+  "status_2": 2,
+  "status_3": 2,
+  "status_4": 0,
+  "status_5": 0,
+  "status_6": 3,
+  "status_7": 0,
+  "status_8": 0,
+  "status_9": 0,
+  "ssid": "schwer"
+}
+```
+
+PA has good docs on what each means: https://community.purpleair.com/t/sensor-json-documentation/6917
 
 ### Google Wifi less so
 
