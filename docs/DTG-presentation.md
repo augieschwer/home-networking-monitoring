@@ -213,12 +213,15 @@ PA has good docs on what each means: https://community.purpleair.com/t/sensor-js
 - But it's not easy to parse
 - There are several existing projects, but none of them just work
 - I really don't want to dig into this code to figure out why the HTML won't parse.
+- This does not spark joy
 
 ### Enter AI as Coding Copilot
 - **Claude**: "Help me parse this ugly HTML"
 - AI handled boilerplate, human provided architecture
 - Rapid prototyping of Python parser
+- https://github.com/augieschwer/home-networking-monitoring/blob/dev/src/parse_modem_status.py
 - Even wrote documentation!
+- https://github.com/augieschwer/home-networking-monitoring/blob/dev/README.md#cable-modem-status-parser
 
 ### The Final Stack
 - **Kubernetes** + **InfluxDB** + **Telegraf** + **Grafana**
