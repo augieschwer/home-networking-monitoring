@@ -154,6 +154,55 @@ PA has good docs on what each means: https://community.purpleair.com/t/sensor-js
 
 ### Google Wifi less so
 
+```
+{
+   "dns": {
+      "mode": "automatic",
+      "servers": [  ]
+   },
+   "setupState": "GWIFI_OOBE_COMPLETE",
+   "software": {
+      "blockingUpdate": 1,
+      "softwareVersion": "14150.376.32",
+      "updateChannel": "stable-channel",
+      "updateNewVersion": "0.0.0.0",
+      "updateProgress": 0.0,
+      "updateRequired": false,
+      "updateStatus": "idle"
+   },
+   "system": {
+      "countryCode": "us",
+      "groupRole": "leaf",
+      "hardwareId": "GALE C2I-A2A-A3C-A4I-E87",
+      "lan0Link": true,
+      "ledAnimation": "CONNECTED",
+      "ledIntensity": 0,
+      "modelId": "ACc3d",
+      "oobeDetailedStatus": "INITIALIZATION_STAGE_DEVICE_ONLINE",
+      "uptime": 5861923
+   },
+   "vorlonInfo": {
+      "migrationMode": "vorlon_all"
+   },
+   "wan": {
+      "captivePortal": false,
+      "ethernetLink": false,
+      "gatewayIpAddress": "192.168.86.1",
+      "invalidCredentials": false,
+      "ipAddress": true,
+      "ipMethod": "dhcp",
+      "ipPrefixLength": 24,
+      "leaseDurationSeconds": 86400,
+      "localIpAddress": "192.168.86.32",
+      "nameServers": [  ],
+      "online": true,
+      "pppoeDetected": false,
+      "vlanScanAttemptCount": 0,
+      "vlanScanComplete": true
+   }
+}
+```
+
 ### Arris modem has a lot of data
 - But it's not easy to parse
 - There are several existing projects, but none of them just work
