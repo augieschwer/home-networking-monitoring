@@ -62,15 +62,15 @@
 
 ## 5. Scope Creep: The Monitoring Rabbit Hole (4 minutes)
 
-### Week-by-Week Evolution
+### The Evolution
 ```
-Week 1: "Let me check modem status occasionally"
-Week 2: "I should automate this HTML parsing" 
-Week 3: "Maybe store it in InfluxDB"
-Week 4: "Grafana would make nice dashboards"
-Week 5: "Kubernetes isn't overkill... right?"
-I don't want to write this code.
-Maybe getting PurpleAir and GoogleWifi data would be easier since it's JSON.
+"Let me check modem status occasionally"
+"I should automate this HTML parsing" 
+"Maybe store it in InfluxDB"
+"Grafana would make nice dashboards"
+"Kubernetes isn't overkill... right?"
+"I don't want to write this code."
+"Maybe getting PurpleAir and GoogleWifi data would be easier since it's JSON."
 ```
 
 ### PurpleAir has some nice data to graph
