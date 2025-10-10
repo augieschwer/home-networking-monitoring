@@ -8,6 +8,8 @@
 ## 1. The "Problem" (2 minutes)
 
 ### The Setup That Worked Fine
+<img width="191" height="442" alt="network-1 drawio" src="https://github.com/user-attachments/assets/e9529259-8863-4982-a3d6-8a0f196b8e24" />
+
 - Google Wifi mesh with wireless backhaul
 - Zero visibility into actual performance
 
