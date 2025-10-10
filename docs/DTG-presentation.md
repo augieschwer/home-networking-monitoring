@@ -10,6 +10,10 @@
 ### The Setup That Worked Fine
 <img width="191" height="442" alt="network-1 drawio" src="https://github.com/user-attachments/assets/e9529259-8863-4982-a3d6-8a0f196b8e24" />
 
+![IMG_0376](https://github.com/user-attachments/assets/e1712580-b7e3-4419-8d92-77a83c5f5132)
+
+![IMG_0377](https://github.com/user-attachments/assets/9d45b38a-7960-4284-918c-0cd47c1c77b8)
+
 - Google Wifi mesh with wireless backhaul
 - Zero visibility into actual performance
 
