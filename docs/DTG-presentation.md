@@ -1,5 +1,4 @@
 # My Overly Complicated Home Networking and Monitoring Project
-**A 20-Minute Journey from "Wired backhaul" to Full NOC style monitoring and metrics**
 
 *Featuring MoCA magic, AI coding assistance, and hard-learned lessons about ISP truck rolls*
 
@@ -24,11 +23,10 @@
 
 ### How could it be better?
 - Wired backhaul
-- Some performance metrics
+- Out of band performance metrics
 
 ### Constraints
 - I don't really want to drag ethernet through the house
-- I don't really want to figure out how to get ethernet behind my walls
 
 ---
 
