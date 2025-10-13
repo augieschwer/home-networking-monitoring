@@ -32,10 +32,16 @@
 
 ## 2. The MoCA Solution (3 minutes)
 
+![IMG_0389](https://github.com/user-attachments/assets/8ed02ddd-d17c-43c1-877e-c8bd9e594200)
+
+
 ### What is MoCA?
 - **Multimedia over Coax Alliance** - Ethernet over existing cable TV wiring
 - Transforms dead coax into gigabit network backbone
 - Google Wifi gets wired backhaul without new cables
+
+![IMG_0391](https://github.com/user-attachments/assets/1d705d5d-33dd-47ea-8b5e-5447a0f86c4d)
+
 
 ### Results
 - **Before**: Probably fine
