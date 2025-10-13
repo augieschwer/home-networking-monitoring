@@ -42,6 +42,7 @@
 
 ![IMG_0391](https://github.com/user-attachments/assets/1d705d5d-33dd-47ea-8b5e-5447a0f86c4d)
 
+<img width="342" height="472" alt="network-2 drawio" src="https://github.com/user-attachments/assets/4e436187-faff-4bed-b5dc-c5ad52fab0c7" />
 
 ### Results
 - **Before**: Probably fine
@@ -60,6 +61,8 @@
 ### Key Lesson
 - Don't use too many splitters.
 - Gee it would have been cool to have the Modem data for all these *before* I called.
+
+<img width="889" height="589" alt="Screenshot 2025-10-13 at 13 20 56" src="https://github.com/user-attachments/assets/fbb56b0a-cf66-40a1-9211-95cfb647ff79" />
 
 ### Disappoint
 - Don't want to waste all this coax and MoCa devices.
