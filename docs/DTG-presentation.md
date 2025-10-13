@@ -78,6 +78,11 @@
 - Keep wired backhaul
 - Route around splitter limitation that causes problems
 
+<img width="342" height="452" alt="network-3 drawio" src="https://github.com/user-attachments/assets/d4e39833-c78d-41f7-a553-5de39ebc874f" />
+
+![IMG_0393](https://github.com/user-attachments/assets/0c06194c-9dcc-4ed0-a66f-90c4547f7967)
+
+
 ## 5. Scope Creep: The Monitoring Rabbit Hole (4 minutes)
 
 ### The Evolution
