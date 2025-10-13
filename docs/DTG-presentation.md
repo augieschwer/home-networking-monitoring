@@ -15,7 +15,12 @@
 ![IMG_0377](https://github.com/user-attachments/assets/9d45b38a-7960-4284-918c-0cd47c1c77b8)
 
 - Google Wifi mesh with wireless backhaul
-- Zero visibility into actual performance
+- Little visibility into actual performance
+
+<img width="1206" height="2622" alt="IMG_0387" src="https://github.com/user-attachments/assets/73cb46a2-6eef-40d4-9c74-ab24b3c30a3c" />
+<img width="1206" height="2622" alt="IMG_0386" src="https://github.com/user-attachments/assets/fc3cbb0e-81a8-4449-8364-0e6b05ed8e73" />
+<img width="1206" height="2622" alt="IMG_0385" src="https://github.com/user-attachments/assets/d7f127f7-4caa-4e3b-bac2-ee1da05257d3" />
+
 
 ### How could it be better?
 - Wired backhaul
