@@ -62,8 +62,6 @@
 - Don't use too many splitters.
 - Gee it would have been cool to have the Modem data for all these *before* I called.
 
-<img width="889" height="589" alt="Screenshot 2025-10-13 at 13 20 56" src="https://github.com/user-attachments/assets/fbb56b0a-cf66-40a1-9211-95cfb647ff79" />
-
 ### Disappoint
 - Don't want to waste all this coax and MoCa devices.
 - Don't want to go back to wireless backhaul for the mesh.
@@ -95,6 +93,17 @@
 "I don't want to write this code."
 "Maybe getting PurpleAir and GoogleWifi data would be easier since it's JSON."
 ```
+
+### Arris modem has a lot of data
+
+<img width="889" height="589" alt="Screenshot 2025-10-13 at 13 20 56" src="https://github.com/user-attachments/assets/fbb56b0a-cf66-40a1-9211-95cfb647ff79" />
+
+- `http://192.168.100.1/cmswinfo.htm`
+- `http://192.168.100.1/cmconnectionstatus.html`
+- But it's not easy to parse
+- There are several existing projects, but none of them just work
+- I really don't want to dig into this code to figure out why the HTML won't parse.
+- This does not spark joy
 
 ### PurpleAir has some nice data to graph
 You can hit it on an HTTP endpoint inside your network.
@@ -234,14 +243,6 @@ PA has good docs on what each means: https://community.purpleair.com/t/sensor-js
 ```
 ![Screenshot from 2025-07-06 14-48-07](https://github.com/user-attachments/assets/385af34e-9c31-4ad7-ab29-b3a44f469209)
 ![Screenshot from 2025-07-06 14-48-36](https://github.com/user-attachments/assets/e5f34aac-64b8-42a1-afe8-8f6126c7a3b3)
-
-### Arris modem has a lot of data
-- `http://192.168.100.1/cmswinfo.htm`
-- `http://192.168.100.1/cmconnectionstatus.html`
-- But it's not easy to parse
-- There are several existing projects, but none of them just work
-- I really don't want to dig into this code to figure out why the HTML won't parse.
-- This does not spark joy
 
 ### Enter AI as Coding Copilot
 - **Claude**: "Help me parse this ugly HTML"
