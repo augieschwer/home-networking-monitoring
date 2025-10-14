@@ -252,6 +252,10 @@ PA has good docs on what each means: https://community.purpleair.com/t/sensor-js
 - Even wrote documentation!
 - https://github.com/augieschwer/home-networking-monitoring/blob/dev/README.md#cable-modem-status-parser
 
+<img width="839" height="958" alt="Screenshot from 2025-07-10 13-47-12" src="https://github.com/user-attachments/assets/8cd29ed0-ce6e-4d84-8f7f-69f92eb09cf7" />
+<img width="836" height="920" alt="Screenshot from 2025-07-10 13-48-32" src="https://github.com/user-attachments/assets/ba539867-bfec-44b2-82b7-bae741aec3dc" />
+<img width="840" height="919" alt="Screenshot from 2025-07-10 13-49-35" src="https://github.com/user-attachments/assets/6f30d5a8-c233-40f5-9527-fd5abdd2e0bf" />
+
 ### The Final Stack
 - **Kubernetes** + **InfluxDB** + **Telegraf** + **Grafana**
 - Custom Python scripts parsing cable modem HTML
@@ -273,41 +277,7 @@ PA has good docs on what each means: https://community.purpleair.com/t/sensor-js
 - Temperature
 - Humidity
 
----
-
-## 7. Was This All Overkill? (2 minutes)
-
-### Honest Answer: Yes... But
-- **Overkill**: Definitely more complex than needed
-- **Learning**: Real K8s skills for home projects
-- **Reproducible**: Helm charts for everything
-- **Shareable**: Easy to document and replicate
-- Chance to see how well the robot could write and document code.
-- Some times we do things just because we can.
-
----
-
-## 8. Lessons Learned & Should You Do This? (1 minute)
-
-### Do This If You:
-- Enjoy the journey more than destination
-- Want to learn modern monitoring tools
-- Have time for "unnecessary" optimization
-- Need impressive dashboards to show off
-- Want access to the data on your network without having to leave your network
-
-### Skip This If You:
-- "Good enough" actually is good enough
-- Don't want to become your own network admin
-- Value simplicity over visibility
-- *Your family already questions your tech projects*
-
-### Final Wisdom
-*"The best network monitoring is the one you actually use. The second-best is the unnecessarily complicated one that teaches you Kubernetes."*
-
----
-
-## Q&A & Live Demo
+### Live Demo
 **Want to see the dashboards in action?**
 
 *Repository: github.com/augieschwer/home-networking-monitoring*
