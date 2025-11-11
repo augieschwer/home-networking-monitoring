@@ -36,7 +36,15 @@ kubectl port-forward svc/myinfluxdb-influxdb2 8086:80
 
 Access Web UI at `http://localhost:8086` and login with `admin` and obtained password.
 
-Navigate to the token creation page, something like: `http://localhost:8086/orgs/8297527383771a6b/load-data/tokens` and generate a token that can write to the `default` bucket; copy this to your Telegraf configuration.
+Navigate to the token creation page, something like: `http://localhost:8086/orgs/8297527383771a6b/load-data/tokens` 
+
+##### Telegraf
+
+Generate a token that can write to the `default` bucket; copy this to your Telegraf configuration.
+
+##### Grafana
+
+Generate a token that can read from the `default` bucket; copy this to your Grafana configuration.
 
 ### Telegraf
 
@@ -57,7 +65,7 @@ Check the Telegraf pod's logs
 
 Check the InfluxDB Data Explorer: `http://localhost:8086/orgs/8297527383771a6b/data-explorer?fluxScriptEditor`
 
-### Graphana
+### Grafana
 
 https://github.com/grafana/helm-charts/blob/main/charts/grafana/README.md
 
