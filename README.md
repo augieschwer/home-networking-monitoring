@@ -36,6 +36,8 @@ kubectl port-forward svc/myinfluxdb-influxdb2 8086:80
 
 Access Web UI at `http://localhost:8086` and login with `admin` and obtained password.
 
+Navigate to the token creation page, something like: `http://localhost:8086/orgs/8297527383771a6b/load-data/tokens` and generate a token that can write to the `default` bucket; copy this to your Telegraf configuration.
+
 ### Telegraf
 
 https://github.com/influxdata/helm-charts/tree/master/charts/telegraf
