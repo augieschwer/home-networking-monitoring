@@ -22,7 +22,7 @@ env:
   - name: HOSTNAME
     value: "telegraf-polling-service"
   - name: INFLUX_TOKEN
-    value: "8jFBqh3PxHH1cNx7I9olZt9HxjtGBLHc5YGXcbTnY4O3Z0ChG94b82gXTBXlG0xHT8FupX-BMwWyYhTXdbcSHA=="
+    value: "fSTxS_a9u-OJAU9vRNOhx52Jz-3PfpeqVRnZSZB0YVhObGdy9wNnDpaP4j9NkuFPEcfd01KsMemGsnEg2z7CQw=="
 # An older "volumeMounts" key was previously added which will likely
 # NOT WORK as you expect. Please use this newer configuration.
 
