@@ -94,6 +94,8 @@ https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-infl
 
 https://docs.influxdata.com/influxdb/v2/tools/grafana/#create-an-influxdb-data-source
 
+Copy `org` and `token` from InfluxDB setup to the grafana helm chart.
+
 #### Dashboards
 
 [Preconfigured dashboards](configs/graphana)
