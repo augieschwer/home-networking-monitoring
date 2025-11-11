@@ -67,12 +67,26 @@ helm repo update
 helm upgrade --install mygraphana -f configs/helm/graphana.yaml grafana/grafana
 ```
 
-#### Set up Ingress on Minikube
+#### Setup
+
+##### Setup Ingress on Minikube
 
 ```
 minikube addons enable ingress
 minikube service mygraphana-grafana --url
 ```
+
+Get the default `admin` password
+
+```kubectl get secret --namespace default mygraphana-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo```
+
+##### Configure InfluxDB connection
+
+https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-influxdb/
+
+https://docs.influxdata.com/influxdb/v2/tools/grafana/?t=InfluxQL
+
+
 
 #### Dashboards
 
