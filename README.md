@@ -92,9 +92,7 @@ Get the default `admin` password
 
 https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-influxdb/
 
-https://docs.influxdata.com/influxdb/v2/tools/grafana/?t=InfluxQL
-
-
+https://docs.influxdata.com/influxdb/v2/tools/grafana/#create-an-influxdb-data-source
 
 #### Dashboards
 
