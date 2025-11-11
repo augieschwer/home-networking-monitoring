@@ -20,6 +20,22 @@ helm repo update
 helm install myinfluxdb influxdata/influxdb2
 ```
 
+#### Setup
+
+Obtain `admin` password
+
+```
+echo $(kubectl get secret myinfluxdb-influxdb2-auth -o "jsonpath={.data['admin-password']}" --namespace default | base64 --decode)
+```
+
+Port forward to access the Web UI
+
+```
+kubectl port-forward svc/myinfluxdb-influxdb2 8086:80
+```
+
+Access Web UI at `http://localhost:8086` and login with `admin` and obtained password.
+
 ### Telegraf
 
 https://github.com/influxdata/helm-charts/tree/master/charts/telegraf
