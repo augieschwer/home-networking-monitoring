@@ -8,12 +8,13 @@ datasources:
   datasources.yaml:
     apiVersion: 1
     datasources:
-      - name: "InfluxDB_v2_InfluxQL"
+      - name: "InfluxDB_v2_Flux"
         type: "influxdb"
         access: "proxy"
         url: "http://myinfluxdb-influxdb2.default.svc.cluster.local/"
         jsonData:
-          dbName: "default"
-          httpHeaderName1: 'Authorization'
+          version: "Flux"
+          organization: "8297527383771a6b"
+          defaultBucket: "default"
         secureJsonData:
-          httpHeaderValue1: 'Token xcT8ZdMGkKvznU3MpWMdJo1h5XJ4EusO'
+          token: "COfZGSp2644TlZirnCT_-h93g0hGch6_WBZwh5sMF0HBDC2z0DxaBb8gIe3kxjpoTzbnlUbCwiLuMe4cIe2KYg=="
