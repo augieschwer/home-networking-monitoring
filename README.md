@@ -36,7 +36,15 @@ kubectl port-forward svc/myinfluxdb-influxdb2 8086:80
 
 Access Web UI at `http://localhost:8086` and login with `admin` and obtained password.
 
-Navigate to the token creation page, something like: `http://localhost:8086/orgs/8297527383771a6b/load-data/tokens` and generate a token that can write to the `default` bucket; copy this to your Telegraf configuration.
+Navigate to the token creation page, something like: `http://localhost:8086/orgs/8297527383771a6b/load-data/tokens` 
+
+##### Telegraf
+
+Generate a token that can write to the `default` bucket; copy this to your Telegraf configuration.
+
+##### Grafana
+
+Generate a token that can read from the `default` bucket; copy this to your Grafana configuration.
 
 ### Telegraf
 
@@ -45,8 +53,19 @@ https://github.com/influxdata/helm-charts/tree/master/charts/telegraf
 ```
 helm upgrade --install mytelegraf -f configs/helm/telegraf.yaml influxdata/telegraf
 ```
+#### Setup
 
-### Graphana
+Copy token from above into your helm chart or configuration.
+
+#### Verify
+
+Check the Telegraf pod's logs
+
+```kubectl logs -f mytelegraf-7597db8c86-gsbxh```
+
+Check the InfluxDB Data Explorer: `http://localhost:8086/orgs/8297527383771a6b/data-explorer?fluxScriptEditor`
+
+### Grafana
 
 https://github.com/grafana/helm-charts/blob/main/charts/grafana/README.md
 
@@ -56,12 +75,26 @@ helm repo update
 helm upgrade --install mygraphana -f configs/helm/graphana.yaml grafana/grafana
 ```
 
-#### Set up Ingress on Minikube
+#### Setup
+
+##### Setup Ingress on Minikube
 
 ```
 minikube addons enable ingress
 minikube service mygraphana-grafana --url
 ```
+
+Get the default `admin` password
+
+```kubectl get secret --namespace default mygraphana-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo```
+
+##### Configure InfluxDB connection
+
+https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-influxdb/
+
+https://docs.influxdata.com/influxdb/v2/tools/grafana/#create-an-influxdb-data-source
+
+Copy `org` and `token` from InfluxDB setup to the grafana helm chart.
 
 #### Dashboards
 
