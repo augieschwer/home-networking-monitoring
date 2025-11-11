@@ -45,6 +45,17 @@ https://github.com/influxdata/helm-charts/tree/master/charts/telegraf
 ```
 helm upgrade --install mytelegraf -f configs/helm/telegraf.yaml influxdata/telegraf
 ```
+#### Setup
+
+Copy token from above into your helm chart or configuration.
+
+#### Verify
+
+Check the Telegraf pod's logs
+
+```kubectl logs -f mytelegraf-7597db8c86-gsbxh```
+
+Check the InfluxDB Data Explorer: `http://localhost:8086/orgs/8297527383771a6b/data-explorer?fluxScriptEditor`
 
 ### Graphana
 
